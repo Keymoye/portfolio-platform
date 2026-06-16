@@ -1,8 +1,6 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
-import jsxA11y from "eslint-plugin-jsx-a11y";
-import * as importPlugin from "eslint-plugin-import";
 
 const eslintConfig = defineConfig([
   ...nextVitals,
@@ -16,10 +14,6 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
   ]),
   {
-    plugins: {
-      "jsx-a11y": jsxA11y,
-      "import": importPlugin,
-    },
     rules: {
       // Accessibility rules (SRS AR-003)
       "jsx-a11y/alt-text": "error",
