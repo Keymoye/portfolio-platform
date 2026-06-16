@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "name": "TypeScript",
+    "category": "Frontend",
+    "proficiency": 5
+  },
+  {
+    "id": "2",
+    "name": "React",
+    "category": "Frontend",
+    "proficiency": 5
+  },
+  {
+    "id": "3",
+    "name": "Next.js",
+    "category": "Frontend",
+    "proficiency": 4
+  },
+  {
+    "id": "4",
+    "name": "Node.js",
+    "category": "Backend",
+    "proficiency": 4
+  },
+  {
+    "id": "5",
+    "name": "Git",
+    "category": "Tools",
+    "proficiency": 5
+  }
+]
