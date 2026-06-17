@@ -12,6 +12,8 @@ export async function getSkills(): Promise<SkillData[]> {
     return validated;
   } catch (error) {
     console.error('Error loading skills:', error);
+    // Return empty array on error to prevent build failure
+    // Build will fail if validation fails in prebuild script
     return [];
   }
 }
