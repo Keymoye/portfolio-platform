@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getAboutContent } from "@/lib/content/mdx";
+import ReactMarkdown from "react-markdown";
 
 export const metadata: Metadata = {
   title: "About - Portfolio",
@@ -10,7 +12,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const content = await getAboutContent();
+
   return (
     <div className="flex flex-col">
       <section className="py-24 px-6 md:px-8">
@@ -19,15 +23,13 @@ export default function AboutPage() {
             About Me
           </h1>
           <div className="prose prose-lg text-foreground">
-            <p className="text-muted-foreground mb-6">
-              I am a software engineer passionate about building production-quality applications with modern web technologies.
-            </p>
-            <p className="text-muted-foreground mb-6">
-              My focus is on creating performant, accessible, and maintainable software that solves real problems.
-            </p>
-            <p className="text-muted-foreground">
-              I am constantly learning and exploring new technologies to improve my craft and deliver better solutions.
-            </p>
+            {content ? (
+              <ReactMarkdown>{content}</ReactMarkdown>
+            ) : (
+              <p className="text-muted-foreground">
+                About content not available.
+              </p>
+            )}
           </div>
         </div>
       </section>

@@ -7,7 +7,7 @@ const ContentSecurityPolicy = [
   "img-src 'self' data: https:",
   "font-src 'self' https://fonts.gstatic.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  "script-src 'self' https://vercel-insights.com https://*.vercel-insights.com https://plausible.io https://cdn.plausible.io https://www.googletagmanager.com",
+  "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel-insights.com https://*.vercel-insights.com https://plausible.io https://cdn.plausible.io https://www.googletagmanager.com",
   "connect-src 'self' https://vitals.vercel-insights.com https://api.vercel-insights.com https://plausible.io https://stats.plausible.io",
   "upgrade-insecure-requests"
 ].join('; ');
