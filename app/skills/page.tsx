@@ -9,6 +9,11 @@ export const metadata: Metadata = {
     description: "Technical skills and technologies I work with",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Skills - Portfolio",
+    description: "Technical skills and technologies I work with",
+  },
 };
 
 export default async function SkillsPage() {

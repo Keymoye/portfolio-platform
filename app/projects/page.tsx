@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     description: "Portfolio projects showcasing software engineering work",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects - Portfolio",
+    description: "Portfolio projects showcasing software engineering work",
+  },
 };
 
 export default async function ProjectsPage() {

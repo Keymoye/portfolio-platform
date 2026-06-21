@@ -9,6 +9,11 @@ export const metadata: Metadata = {
     description: "Download my resume to learn more about my experience and qualifications",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Resume - Portfolio",
+    description: "Download my resume to learn more about my experience and qualifications",
+  },
 };
 
 export default function ResumePage() {

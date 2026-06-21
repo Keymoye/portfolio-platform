@@ -10,6 +10,11 @@ export const metadata: Metadata = {
     description: "Get in touch with me via the contact form",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact - Portfolio",
+    description: "Get in touch with me via the contact form",
+  },
 };
 
 export default function ContactPage() {

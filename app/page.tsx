@@ -11,6 +11,11 @@ export const metadata: Metadata = {
     description: "Professional portfolio showcasing software engineering projects and skills",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio - Software Engineer",
+    description: "Professional portfolio showcasing software engineering projects and skills",
+  },
 };
 
 export default function Home() {

@@ -10,6 +10,11 @@ export const metadata: Metadata = {
     description: "Learn about my background, experience, and career goals",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "About - Portfolio",
+    description: "Learn about my background, experience, and career goals",
+  },
 };
 
 export default async function AboutPage() {
