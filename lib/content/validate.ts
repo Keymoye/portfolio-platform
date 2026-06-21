@@ -1,4 +1,4 @@
-import { projectSchema, skillSchema } from './schemas';
+import { skillSchema } from './schemas';
 import fs from 'fs';
 import path from 'path';
 
@@ -32,9 +32,8 @@ if (fs.existsSync(PROJECTS_DIR)) {
     if (file.endsWith('.mdx') || file.endsWith('.md')) {
       try {
         const filePath = path.join(PROJECTS_DIR, file);
-        const content = fs.readFileSync(filePath, 'utf-8');
-        // Parse frontmatter (full implementation in Epic 4)
-        // For now, just check file exists
+        // Check file exists (full frontmatter validation in Epic 4)
+        fs.readFileSync(filePath, 'utf-8');
         console.log(`✅ ${file} exists`);
       } catch (error) {
         console.error(`❌ ${file} validation failed:`, error);

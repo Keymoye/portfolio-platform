@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getProjectBySlug, getProjects } from "@/lib/content/projects";
+import { CaseStudy } from "@/components/projects/CaseStudy";
 
 // Required by architecture to prevent ISR regression and ensure static generation.
 export async function generateStaticParams() {
@@ -82,45 +83,7 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
               </a>
             )}
           </div>
-          {project.caseStudy && (
-            <div className="border-t border-border pt-8">
-              <h2 className="text-2xl font-semibold text-foreground mb-4">
-                Case Study
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    Problem
-                  </h3>
-                  <p className="text-muted-foreground">{project.caseStudy.problem}</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    Solution
-                  </h3>
-                  <p className="text-muted-foreground">{project.caseStudy.solution}</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    Architecture
-                  </h3>
-                  <p className="text-muted-foreground">{project.caseStudy.architecture}</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    Challenges
-                  </h3>
-                  <p className="text-muted-foreground">{project.caseStudy.challenges}</p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    Outcomes
-                  </h3>
-                  <p className="text-muted-foreground">{project.caseStudy.outcomes}</p>
-                </div>
-              </div>
-            </div>
-          )}
+          {project.caseStudy && <CaseStudy caseStudy={project.caseStudy} />}
         </div>
       </section>
     </div>
