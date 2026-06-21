@@ -7,7 +7,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="border border-border rounded-lg p-6 hover:border-accent transition-colors">
+    <article data-testid="project-card" className="border border-border rounded-lg p-6 hover:border-accent transition-colors">
       <div className="flex items-start justify-between mb-4">
         <h2 className="text-2xl font-semibold text-foreground">
           <Link

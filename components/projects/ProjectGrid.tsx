@@ -1,11 +1,18 @@
 import { ProjectCard } from "./ProjectCard";
+import { EmptyProjectsState } from "./EmptyProjectsState";
 import type { ProjectData } from "@/lib/content/schemas";
 
 interface ProjectGridProps {
   projects: ProjectData[];
+  onClearFilters?: () => void;
+  showEmptyState?: boolean;
 }
 
-export function ProjectGrid({ projects }: ProjectGridProps) {
+export function ProjectGrid({ projects, onClearFilters, showEmptyState = false }: ProjectGridProps) {
+  if (projects.length === 0 && showEmptyState && onClearFilters) {
+    return <EmptyProjectsState onClearFilters={onClearFilters} />;
+  }
+
   if (projects.length === 0) {
     return (
       <div className="text-center py-12">
