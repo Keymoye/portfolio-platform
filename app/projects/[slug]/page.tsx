@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { getProjectBySlug } from "@/lib/content/projects";
 import { getAllProjectSlugs } from "@/lib/content/mdx";
 import { CaseStudy } from "@/components/projects/CaseStudy";
@@ -96,6 +97,24 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <p className="text-xl text-muted-foreground mb-8">
               {project.description}
             </p>
+            
+            {project.images && project.images.length > 0 && (
+              <div className="mb-8 space-y-4">
+                {project.images.map((image, index) => (
+                  <div key={index} className="relative aspect-video w-full bg-background-muted rounded-lg overflow-hidden">
+                    <Image
+                      src={image}
+                      alt={`${project.title} screenshot ${index + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1024px"
+                      priority={index === 0}
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+            
             <div className="flex flex-wrap gap-2 mb-8">
               {project.techStack.map((tech) => (
                 <span

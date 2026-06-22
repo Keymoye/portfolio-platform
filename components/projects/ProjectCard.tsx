@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ProjectData } from "@/lib/content/schemas";
 
 interface ProjectCardProps {
@@ -6,8 +7,22 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const thumbnail = project.images?.[0];
+
   return (
-    <article data-testid="project-card" className="border border-border rounded-lg p-6 hover:border-accent transition-colors">
+    <article data-testid="project-card" className="border border-border rounded-lg overflow-hidden hover:border-accent transition-colors">
+      {thumbnail && (
+        <Link href={`/projects/${project.slug}`} className="block relative aspect-video w-full bg-background-muted">
+          <Image
+            src={thumbnail}
+            alt={`${project.title} screenshot`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </Link>
+      )}
+      <div className="p-6">
       <div className="flex items-start justify-between mb-4">
         <h2 className="text-2xl font-semibold text-foreground">
           <Link
@@ -56,6 +71,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </a>
         )}
       </div>
+    </div>
     </article>
   );
 }
